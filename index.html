@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<p>Быстрый сервер:</p>
+		<p>npm install http-server -g</p>
+		<p>http-server</p>
+	</div>
+
+	<script>
+		$(function() {
+
+			notes = [
+				'note_19_09_18.txt',
+				'note_20_09_18.txt'
+			];
+
+			function show_notes(note) {
+				$.ajax({
+				  type: 'GET',	
+				  url: '/notes/' + note,
+				  success: function(data) {
+				    console.log(note.slice(5, 13).replace(/_/g, '.'), data);
+				  }
+				});
+			}
+
+			for (i in notes) {
+				show_notes(notes[i]);
+			}
+
+		}());
+	</script>
+</body>
+</html>
