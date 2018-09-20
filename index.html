@@ -24,7 +24,7 @@
 			function show_notes(note) {
 				$.ajax({
 				  type: 'GET',	
-				  url: '/notes/' + note,
+				  url: 'notes/' + note,
 				  success: function(data) {
 				    console.log(note.slice(5, 13).replace(/_/g, '.'), data);
 				  }
