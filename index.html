@@ -62,7 +62,7 @@
 				// Берем заголовок из первой строки 
 				$.ajax({
 					type: 'GET',	
-					url: '/notes/' + note,
+					url: 'notes/' + note,
 					success: function(data) {
 					  a.textContent = data;
 					}
