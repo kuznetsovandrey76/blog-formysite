@@ -10,10 +10,10 @@ https://colorscheme.ru/web-safe-colors.html
 	font-weight: normal;
 	font-family: Tahoma;
 }
-div {
+.header,
+.footer {
 	text-align: center;
 	margin: 10px 0;
-	color: rgb(204, 204, 204);
 }
 table {
 	margin: 0 auto;
@@ -31,4 +31,8 @@ a {
 	margin-left: 10px;
 	cursor: pointer;
 	color: rgb(255, 255, 204);
+}
+.footer a{
+	font-size: 10px;
+	color: rgb(204, 204, 204);
 }
