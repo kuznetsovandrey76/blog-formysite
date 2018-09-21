@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() { 
 	(function() {
 
+		var notes = [
+			'2018',
+
+			'september',
+			'note_21_09_18.txt', // friday
+		];
+		
 		// Выбрать DOM элемент  
 		function select(elem) {
 			return document.querySelector(elem);
