@@ -1,5 +1,5 @@
-$( document ).ready(function() {
-	$(function() {
+document.addEventListener("DOMContentLoaded", function() { 
+	(function() {
 
 		// Выбрать DOM элемент  
 		function select(elem) {
@@ -36,15 +36,28 @@ $( document ).ready(function() {
 				a = create('a');
 
 			// Берем заголовок из первой строки 
-			$.ajax({
-				type: 'GET',	
-				url: 'notes/' + note,
-				success: function(data) {
-				  	// Добавляем в ссылку только первую строку
-					a.textContent = data.slice(0, data.indexOf('\n'));
-					a.href = 'notes/' + note;
+			// $.ajax({
+			// 	type: 'GET',	
+			// 	url: 'notes/' + note,
+			// 	success: function(data) {
+			// 	  	// Добавляем в ссылку только первую строку
+			// 		a.textContent = data.slice(0, data.indexOf('\n'));
+			// 		a.href = 'notes/' + note;
+			// 	}
+			// });
+
+			// [Аналог] Для моего телефона
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'notes/' + note, true);
+
+			xhr.onload = function() {
+				if (this.status == 200) {
+					a.textContent = this.response.slice(0, this.response.indexOf('\n'));
+					a.href = 'notes/' + note;	
 				}
-			});
+			}
+			xhr.send();
+
 
 			td.appendChild(a);
 			th.textContent = date;
