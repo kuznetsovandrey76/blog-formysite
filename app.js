@@ -1,17 +1,6 @@
 $( document ).ready(function() {
 	$(function() {
 
-		// Список всех статей
-		notes = [
-			'2018',
-			'october',
-			'note_21_10_18.txt',
-			'september',
-			'note_21_09_18.txt',
-			'note_20_09_18.txt',
-			'note_19_09_18.txt'
-		];
-
 		// Выбрать DOM элемент  
 		function select(elem) {
 			return document.querySelector(elem);
