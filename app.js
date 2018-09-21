@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			xhr.send();
 
 
-			td.appendChild(a);
+			td.append(a);
 			th.textContent = date;
 
-			tr.appendChild(th)
-			tr.appendChild(td)
+			tr.append(th)
+			tr.append(td)
 
 			//Ввозвращаем строку таблицы
 			return tr;				
