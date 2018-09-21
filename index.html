@@ -2,37 +2,85 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Andrey Kuznetsov | Blog</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
-
-	<div>
-		<p>Быстрый сервер:</p>
-		<p>npm install http-server -g</p>
-		<p>http-server</p>
-	</div>
+	<!-- Основа для заполнения -->
+	<table>
+		<tbody></tbody>
+	</table>
 
 	<script>
 		$(function() {
 
+			// Список всех статей
 			notes = [
-				'note_19_09_18.txt',
-				'note_20_09_18.txt'
+				'2018',
+				'october',
+				'note_21_10_18.txt',
+				'september',
+				'note_21_09_18.txt',
+				'note_20_09_18.txt',
+				'note_19_09_18.txt'
 			];
 
-			function show_notes(note) {
-				$.ajax({
-				  type: 'GET',	
-				  url: 'notes/' + note,
-				  success: function(data) {
-				    console.log(note.slice(5, 13).replace(/_/g, '.'), data);
-				  }
-				});
-			}
+			// Выбрать DOM элемент  
+			function select(elem) {
+				return document.querySelector(elem);
+			};
 
-			for (i in notes) {
-				show_notes(notes[i]);
+			var select_tbody = select('tbody');
+
+			// Создаем новую строку
+			// которая будет показывать год, месяц или статью
+			// note - название статьи
+			function article(note) {
+
+				// Проверка чем является note
+				// год, месяц или статья
+				if (note.indexOf('.txt') > 0) {
+					// Преобразуем note в дату 
+					var date = note.slice(5, 13).replace(/_/g, '.');
+				} else {
+					var date = note;
+				}
+
+				// создание DOM элемента
+				// elem - создаваемый элемент
+				function create(elem) {
+					return document.createElement(elem);
+				};
+
+				var tr = create('tr'),
+					// год, месяц или число 
+					th = create('th'),
+					td = create('td'),
+					// название статьи
+					a = create('a');
+
+				// Берем заголовок из первой строки 
+				$.ajax({
+					type: 'GET',	
+					url: '/notes/' + note,
+					success: function(data) {
+					  a.textContent = data;
+					}
+				});
+
+				td.appendChild(a);
+				th.textContent = date;
+
+				tr.appendChild(th)
+				tr.appendChild(td)
+
+				//Ввозвращаем строку таблицы
+				return tr;				
+			}		
+
+			// Пробегаем по всем статьям
+			for (var i = 0, l = notes.length; i < l; i++) {
+				select_tbody.append(article(notes[i]))			
 			}
 
 		}());
