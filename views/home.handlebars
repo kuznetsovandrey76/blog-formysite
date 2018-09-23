@@ -76,7 +76,8 @@ function article(note) {
 }		
 
 // Пробегаем по всем статьям
-for (var i = 0, l = notes.length; i < l; i++) {
+for (i = 0, max = notes.length; i < max; i++) {
+	alert(i)
 	select_tbody.append(article(notes[i]))			
 }
 </script>
