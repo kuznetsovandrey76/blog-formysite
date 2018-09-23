@@ -1,8 +1,9 @@
 <script>
 var notes = [
-	// '2018',
+	'2018',
 
 	'september',
+	'note_23_09_18.txt', 
 	'note_21_09_18.txt', // friday
 ];
 	
@@ -18,8 +19,6 @@ var select_tbody = select('tbody');
 // note - название статьи
 function article(note) {
 
-	alert('note')
-	alert(note)
 	// Проверка чем является note
 	// год, месяц или статья
 	if (note.indexOf('.txt') > 0) {
@@ -29,8 +28,6 @@ function article(note) {
 		var date = note;
 	}
 
-	alert('date')
-	alert(date)
 	// создание DOM элемента
 	// elem - создаваемый элемент
 	function create(elem) {
@@ -61,8 +58,6 @@ function article(note) {
 
 	xhr.onload = function() {
 		if (this.status == 200) {
-			alert('xhr')
-			alert(this.response.slice(0, this.response.indexOf('\n')))
 			a.textContent = this.response.slice(0, this.response.indexOf('\n'));
 			a.href = 'notes/' + note;	
 		}
@@ -76,14 +71,12 @@ function article(note) {
 	tr.appendChild(th);
 	tr.appendChild(td);
 
-	alert(tr);
 	//Ввозвращаем строку таблицы
 	return tr;				
 }		
 
 // Пробегаем по всем статьям
 for (i = 0, max = notes.length; i < max; i++) {
-	alert('i: ' + i)
-	select_tbody.appendChild(article(notes[i]))			
+	select_tbody.appendChild(article(notes[i]));			
 }
 </script>
