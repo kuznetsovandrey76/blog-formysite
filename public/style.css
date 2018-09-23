@@ -10,6 +10,9 @@ https://colorscheme.ru/web-safe-colors.html
 	font-weight: normal;
 	font-family: Tahoma;
 }
+body {
+	width: 100%;
+}
 .header,
 .footer {
 	text-align: center;
@@ -35,4 +38,11 @@ a {
 .footer a{
 	font-size: 10px;
 	color: rgb(204, 204, 204);
+}
+.note {
+	text-align: center;
+}
+.note-article {
+	font-weight: bold;
+	margin-top: 10px;
 }
