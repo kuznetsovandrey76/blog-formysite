@@ -5,12 +5,12 @@ https://colorscheme.ru/web-safe-colors.html
 
 * {
 	margin: 0;
-	background: rgb(0, 0, 51);
 	color: rgb(153, 204, 255);
 	font-weight: normal;
 	font-family: Tahoma;
 }
 body {
+	background: rgb(0, 0, 51);
 	width: 100%;
 }
 .header,
@@ -45,4 +45,11 @@ a {
 .note-article {
 	font-weight: bold;
 	margin-top: 10px;
+}
+pre {
+	width: 40%;
+	margin: 0 auto;
+}
+.javascript {
+	text-align: left;
 }

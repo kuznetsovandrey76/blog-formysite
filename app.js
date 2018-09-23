@@ -21,14 +21,14 @@ app.get('/', function(req, res){
 
   // Передаем данные из data.js в виде строки
   // views/home.handlebars 
-  res.render('home', {data: data, text: 'hello'});
+  res.render('home', {data: data});
 
 }); 
 
 // Перехватываем request
 // id - берем из a.id
 app.get('/notes/:id', function(req, res){
-
+	
   res.render('notes/' + req.params.id);
 });
 
