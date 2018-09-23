@@ -3,8 +3,8 @@ var notes = [
 	'2018',
 
 	'september',
-	'note_23_09_18.txt', 
-	'note_21_09_18.txt', // friday
+	'note_23_09_18', 
+	'note_21_09_18', // friday
 ];
 
 module.exports = notes;
