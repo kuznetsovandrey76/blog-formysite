@@ -5,3 +5,5 @@ var notes = [
 	'september',
 	'note_21_09_18.txt', // friday
 ];
+
+module.exports = notes;

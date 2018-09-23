@@ -88,7 +88,11 @@
 let express = require('express'),
 	bodyParser = require('body-parser'),
 	exphbs  = require('express-handlebars'),
+	data = require('./data.js'),
 	app = express();
+
+
+console.log(data)
 
 // Размещаем css, js в public/
 app.use(express.static(__dirname + '/public'));
