@@ -70,13 +70,13 @@ function article(note) {
 	xhr.send();
 
 
-	td.append(a);
+	td.appendChild(a);
 	th.textContent = date;
 
-	tr.append(th)
-	tr.append(td)
+	tr.appendChild(th);
+	tr.appendChild(td);
 
-	alert(tr)
+	alert(tr);
 	//Ввозвращаем строку таблицы
 	return tr;				
 }		
@@ -84,6 +84,6 @@ function article(note) {
 // Пробегаем по всем статьям
 for (i = 0, max = notes.length; i < max; i++) {
 	alert('i: ' + i)
-	select_tbody.append(article(notes[i]))			
+	select_tbody.appendChild(article(notes[i]))			
 }
 </script>
