@@ -1,14 +1,14 @@
 ``` 
-data.js   - [хронология] 
-app.js   - [сервер]
-public/   - [css, js]
+data.js                 - [хронология] 
+app.js                  - [сервер]
+public/                 - [css, js]
   - style.css
-  - update_table.js    - [отрисовываем таблицу]
-  - event.js   - [временный]
-views/   - []
-  - layouts/    - [основной шаблон]
-  - notes/   - [записи]
-  - home.handlebars   - [шаблон таблицы]   
+  - update_table.js     - [отрисовываем таблицу]
+  - event.js            - [временный]
+views/   
+  - layouts/            - [основной шаблон]
+  - notes/              - [записи]
+  - home.handlebars     - [шаблон таблицы]   
 ```
 
 Добавление записей:  
