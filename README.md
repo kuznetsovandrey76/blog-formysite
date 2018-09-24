@@ -25,3 +25,27 @@ example - `note_18_03_90`
 `git clone https://github.com/kuznetsovandrey76/blog-formysite.git`   
 `npm install`  
 `node app` - запуск сервера    
+
+`note` example:
+``` html
+<div class="note">
+  <p class="date">__.__.18</p>
+
+  {{!-- EDUCATION --}}
+  <p class="note-article">Education</p>
+  <p></p>
+  <pre><code class="javascript"></code></pre>
+
+  {{!-- WORK --}}
+  <p class="note-article">Work</p>
+  <p></p>
+
+  {{!-- LIFESTYLE --}}
+  <p class="note-article">Lifestyle</p>
+  <p></p>
+
+  {{!-- SPORT --}}
+  <p class="note-article">Sport</p>
+  <p></p>
+</div>
+```
